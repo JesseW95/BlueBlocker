@@ -1,0 +1,11 @@
+.showhide:hover, .blockub:hover{
+    cursor: pointer;
+    background-color: rgb(25,120,185, 1);
+}
+
+.showhide, .blockub {
+    color:rgb(231, 233, 234);
+    border-radius:9999px;
+    padding: 0 18px 0 18px;
+    background-color:rgb(29,155,240);
+}

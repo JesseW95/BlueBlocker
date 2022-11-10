@@ -12,6 +12,7 @@
       "matches": ["http://www.twitter.com/*",
                    "https://twitter.com/*"],
       "js": [ "JS/contentScript.js"],
+      "css": ["CSS/bb.css"],
       "run_at": "document_end"
     }
   ],

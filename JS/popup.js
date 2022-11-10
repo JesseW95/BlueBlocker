@@ -1,8 +1,10 @@
 //popup.js
 // Saves options to chrome.storage
+var whitelistta;
+var blockNFTcb;
 function save_options() {
-    var whitelistInput = document.getElementById('whitelist').value.replace(/\r\n/g,"\n").split("\n");
-    var blockNFT = document.getElementById('nft').value;
+    whitelistInput = whitelistta.value.replace(/\r\n/g,"\n").split("\n");
+    blockNFT = blockNFTcb.value;
     chrome.storage.local.set({
       whitelist: whitelistInput,
       blockNFT: blockNFT
@@ -20,12 +22,15 @@ function save_options() {
   function restore_options() {
     chrome.storage.local.get(['whitelist', 'blockNFT'], function(items) {
         debugger;
-      document.getElementById('whitelist').value = items.whitelist?.join('\n');
-      document.getElementById('nft').value = items.nft?.blockNFT;
+      whitelistta.value = items.whitelist?.join('\n');
+      blockNFTcb.value = items.nft?.blockNFT;
+      whitelistta.scrollTop = whitelistta.scrollHeight;
     });
   }
 
   window.onload = function(){
+    whitelistta = document.getElementById('whitelist');
+    blockNFTcb = document.getElementById('nft');
     restore_options();
 }
 
