@@ -1,0 +1,25 @@
+{
+"manifest_version": 2,
+"name": "BlueBlock",
+"description": "Remove twitter blue users from your sight",
+"version": "1.0",
+"browser_action": {    
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+},
+"content_scripts": [
+    {
+      "matches": ["http://www.twitter.com/*",
+                   "https://twitter.com/*"],
+      "js": [ "JS/contentScript.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["JS/background.js"],
+    "persistent": false
+  },
+    "permissions": [
+        "storage"
+    ]
+}
